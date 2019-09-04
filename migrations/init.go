@@ -13,6 +13,6 @@ func main() {
 
 	defer d.Close()
 
-	d.DropTableIfExists(&model.User{})
-	d.CreateTable(&model.User{})
+	d.AutoMigrate(&model.User{}, &model.Orders{}, &model.OrdersList{}, &model.Product{})
+
 }

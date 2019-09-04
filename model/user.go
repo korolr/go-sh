@@ -1,8 +1,9 @@
 package model
 
 import (
-	"golang.org/x/crypto/bcrypt"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 
 	"github.com/jinzhu/gorm"
 	// gorm postgres dialect
@@ -24,8 +25,10 @@ type User struct {
 	Password  string `gorm:"not null"`
 	FirstName string `gorm:"type:varchar(50);not null"`
 	LastName  string `gorm:"type:varchar(50);not null"`
+	Addres    string
 	Bio       string
 	Avatar    string
+	Admin     bool
 }
 
 // HashPassword : hashing the password
